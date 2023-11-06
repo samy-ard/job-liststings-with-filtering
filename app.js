@@ -105,10 +105,8 @@ $(document).on('click', '.tag-item', function(e) {
 
 $(document).on('click', '.filter-item > .close', function(e) {
 	e.preventDefault();
-	console.log(filtersArr);
-	console.log($(this).parent().data('filter'));
-	filtersArr.splice($(this).parent().data('filter'), 1);
-	console.log(filtersArr);
+	const indexFilter = filtersArr.indexOf($(this).parent().data('filter'));
+	filtersArr.splice(indexFilter, 1);
 	$(this).parent().remove();
 	displayJobs(filtersArr);
 });
